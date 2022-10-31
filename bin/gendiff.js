@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import path from 'node:path';
-import { readFileSync } from 'node:fs';
-import gendiff from '../src/utils';
+import genDiff from '../src/index.js';
+
 
 const program = new Command();
 
@@ -15,9 +14,7 @@ program
   .argument('<filepath1>')
   .argument('<filepath2>')
   .action((filepath1, filepath2) => {
-    const file1 = readFileSync(path.resolve(filepath1));
-    const file2 = readFileSync(path.resolve(filepath2));
-    console.log(gendiff(file1, file2));
+    console.log(genDiff(filepath1, filepath2));
   });
 
 program.parse();
