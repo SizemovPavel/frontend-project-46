@@ -7,7 +7,7 @@ publish:
 lint:
 	npx eslint .
 
-jest:
+test:
 	npx jest
 
 test-coverage:
