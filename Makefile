@@ -8,4 +8,7 @@ lint:
 	npx eslint .
 
 jest:
-	npx -n --experimental-vm-modules jest
+	npx jest
+
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
