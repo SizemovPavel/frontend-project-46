@@ -1,9 +1,11 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
+import process from 'node:process';
 
 const getFile = (filePath) => {
-  const absolutPath = path.resolve(filePath);
+  const currentDirectory = process.cwd();
+  const absolutPath = path.resolve(currentDirectory, '__fixtures__', filePath);
   return readFileSync(absolutPath, 'utf-8');
 };
 
