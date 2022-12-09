@@ -6,6 +6,12 @@
 
 ## Difference generator
 
+## Description
+
+- The utility finds and shows differences in configuration files. 
+- Works with .json, .yml files.
+- Three formats of output are available: 'stylish' as default, 'plain' and 'json'.
+
 ### Requirements
 
 - Mac / Linux
