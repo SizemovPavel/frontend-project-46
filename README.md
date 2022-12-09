@@ -6,7 +6,7 @@
 
 ## Difference generator
 
-## Description
+### Description
 
 - The utility finds and shows differences in configuration files. 
 - Works with .json, .yml files.
