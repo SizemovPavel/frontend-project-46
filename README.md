@@ -31,3 +31,8 @@ $ gendiff [options] <filepath1> <filepath2>
 $ gendiff --format plain file1.json file2.json
 ```
 [![asciicast](https://asciinema.org/a/knucNmlPK3EB8dI5TUsQMFHr3.svg)](https://asciinema.org/a/knucNmlPK3EB8dI5TUsQMFHr3)
+
+```
+gendiff -f json file1.json file2.json
+```
+[![asciicast](https://asciinema.org/a/AiLsqWs0KieebtlmnE0CXAMHF.svg)](https://asciinema.org/a/AiLsqWs0KieebtlmnE0CXAMHF)
