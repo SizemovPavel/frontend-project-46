@@ -13,19 +13,15 @@ const getExtName = (filePath) => path.extname(filePath);
 
 const getParsedFile = (filePath) => {
   const ext = getExtName(filePath);
-  let parse;
   switch (ext) {
     case '.json':
-      parse = JSON.parse;
-      break;
+      return JSON.parse(getFile(filePath));
     case '.yaml':
     case '.yml':
-      parse = yaml.load;
-      break;
+      return yaml.load(getFile(filePath));
     default:
-      break;
+      return `Unknow extname: '${ext}'!`;
   }
-  return parse ? parse(getFile(filePath)) : undefined;
 };
 
-export default (filePath) => getParsedFile(filePath);
+export default getParsedFile;
