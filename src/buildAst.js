@@ -8,17 +8,17 @@ const buildAst = (object1, object2) => {
     const secondValueObject = object2[key];
 
     if (_.isObject(firstValueObject) && _.isObject(secondValueObject)) {
-      return { key, children: buildAst(firstValueObject, secondValueObject), type: 'children' };
+      return { key, type: 'children', children: buildAst(firstValueObject, secondValueObject) };
     }
     if (!Object.hasOwn(object1, key)) {
-      return { key, value2: secondValueObject, type: 'added' };
+      return { key, type: 'added', value2: secondValueObject };
     }
     if (!Object.hasOwn(object2, key)) {
-      return { key, value1: firstValueObject, type: 'removed' };
+      return { key, type: 'removed', value1: firstValueObject };
     }
     if (firstValueObject !== secondValueObject) {
       return {
-        key, value1: firstValueObject, value2: secondValueObject, type: 'changed',
+        key, type: 'changed', value1: firstValueObject, value2: secondValueObject,
       };
     }
     return { key, value1: firstValueObject, type: 'unchanged' };
